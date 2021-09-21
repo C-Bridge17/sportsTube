@@ -3,6 +3,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 
+from datetime import datetime
+
+now = datetime.now()
+
+
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
@@ -10,6 +15,26 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    profileImgUrl = db.Column(
+        db.String, default='https://i.pinimg.com/474x/60/13/a3/6013a33f806d8d74f43ee2eb565ff4dc.jpg')
+
+    videos = db.relationship(
+        'Video', back_populates='user', cascade='all, delete')
+    likes = db.relationship(
+        'Like', back_populates='user', cascade='all, delete'
+    )
+
+    playlists = db.relationship(
+        'Playlist', back_populates='user', cascade='all,delete'
+    )
+
+    subscribers = db.relationship(
+        'User', lambda: subscriber,
+        primaryjoin=lambda: User.id == subscriber.c.user_id,
+        secondaryjoin=lambda: User.id == subscriber.c.subbed,
+        backref='subscribers',
+        cascade='all, delete'
+    )
 
     @property
     def password(self):
@@ -23,8 +48,28 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password, password)
 
     def to_dict(self):
+
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profileImgUrl': self.profileImgUrl,
+            'subbed': [user.to_dict_small() for user in self.subbed]
         }
+
+    def to_dict_small(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'profileImgUrl': self.profileImgUrl,
+        }
+
+
+subscriber = db.Table(
+    'subscribers',
+    db.Column('user_id', db.Integer, db.ForeignKey(User.id), primary_key=True),
+    db.Column('subbed', db.Integer,
+              db.ForeignKey(User.id), primary_key=True),
+    db.Column('createdAt', db.DateTime, default=f'{now}')
+)
