@@ -11,3 +11,11 @@ class PlaylistVideoJoin(db.Model):
 
     playlist = db.relationship('Playlist', back_populates='playlists')
     video = db.relationship('Video', back_populates='videos')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'playlist': self.playlist.to_dict(),
+            'video': self.video.to_dict(),
+            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S')
+        }

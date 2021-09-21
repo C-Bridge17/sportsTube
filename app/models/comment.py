@@ -13,3 +13,22 @@ class Comment(db.Model):
     user = db.relationship('User', back_populates='comments')
     video = db.relationship('Video', back_populates='comments')
     likes = db.relationship('Like', back_populates='comment')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'videoId': self.videoId,
+            'content': self.content,
+            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S')
+
+        }
+
+    def to_dict_ext(self):
+        return{
+            'id': self.id,
+            'user': self.user.to_dict(),
+            'video': self.video.to_dict(),
+            'content': self.content,
+            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S')
+        }

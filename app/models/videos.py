@@ -13,3 +13,21 @@ class Video(db.Model):
     user = db.relationship('User', back_populates='videos')
     likes = db.relationship('Like', back_populates='video')
     videos = db.relationship('Playlist', back_populates='video')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'caption': self.caption,
+            'videoUrl': self.videoUrl,
+            'userId': self.userId,
+            'createdAt': self.createdAt
+        }
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'caption': self.caption,
+            'videoUrl': self.videoUrl,
+            'userId': self.user.to_dict(),
+            'createdAt': self.createdAt
+        }

@@ -13,3 +13,21 @@ class Like(db.Model):
     user = db.relationship('User', back_populates='likes')
     video = db.relationship('Video', back_populates='likes')
     comment = db.relationship('Comment', back_populates='likes')
+
+    def to_dict(self):
+        return{
+            'id': self.id,
+            'userId': self.userId,
+            'videoId': self.videoId,
+            'commentId': self.commentId,
+            'createdAt': self.createdAt
+        }
+
+    def to_dict_ext(self):
+        return{
+            'id': self.id,
+            'userId': self.user.to_dict(),
+            'videoId': self.video.to_dict(),
+            'commentId': self.commentId.to_dict(),
+            'createdAt': self.createdAt
+        }
