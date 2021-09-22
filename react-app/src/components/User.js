@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 function User() {
   const [user, setUser] = useState({});
-  const { userId }  = useParams();
+  const { userId } = useParams();
 
   useEffect(() => {
     if (!userId) {
@@ -28,10 +28,11 @@ function User() {
       <li>
         <strong>Username</strong> {user.username}
       </li>
+      <iframe width="75%" height="50%" src="https://www.youtube.com/embed/2_mprlpziDA"></iframe>
       <li>
         <strong>Email</strong> {user.email}
       </li>
-    </ul>
+    </ul >
   );
 }
 export default User;

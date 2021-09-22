@@ -12,7 +12,9 @@ class Video(db.Model):
 
     user = db.relationship('User', back_populates='videos')
     likes = db.relationship('Like', back_populates='video')
-    videos = db.relationship('Playlist', back_populates='video')
+    comments = db.relationship('Comment', back_populates='video')
+    videos = db.relationship(
+        'PlaylistVideoJoin', back_populates='video', cascade='all, delete')
 
     def to_dict(self):
         return {

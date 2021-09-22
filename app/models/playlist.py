@@ -10,7 +10,8 @@ class Playlist(db.Model):
     default = db.Column(db.Boolean, default=False)
 
     user = db.relationship('User', back_populates='playlists')
-    playlists = db.relationship('Playlist', back_populates='playlist')
+    playlist_content = db.relationship(
+        'PlaylistVideoJoin', back_populates='playlist', cascade='all, delete')
 
     def to_dict(self):
         return{
