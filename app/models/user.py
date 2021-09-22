@@ -27,12 +27,13 @@ class User(db.Model, UserMixin):
     playlists = db.relationship(
         'Playlist', back_populates='user', cascade='all,delete'
     )
+    comments = db.relationship('Comment', back_populates='user')
 
     subscribers = db.relationship(
         'User', lambda: subscriber,
         primaryjoin=lambda: User.id == subscriber.c.user_id,
         secondaryjoin=lambda: User.id == subscriber.c.subbed,
-        backref='subscribers',
+        backref='subscriber',
         cascade='all, delete'
     )
 
@@ -54,7 +55,7 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profileImgUrl': self.profileImgUrl,
-            'subbed': [user.to_dict_small() for user in self.subbed]
+            'subbed': [user.to_dict_small() for user in self.subscriber]
         }
 
     def to_dict_small(self):
