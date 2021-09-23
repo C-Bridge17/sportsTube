@@ -28,7 +28,6 @@ function User() {
       <li>
         <strong>Username</strong> {user.username}
       </li>
-      <iframe width="75%" height="50%" src="https://www.youtube.com/embed/2_mprlpziDA"></iframe>
       <li>
         <strong>Email</strong> {user.email}
       </li>
