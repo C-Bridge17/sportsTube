@@ -32,5 +32,6 @@ class Video(db.Model):
             'videoUrl': self.videoUrl,
             'userId': self.user.to_dict(),
             'createdAt': self.createdAt,
-            'likes': [like.to_dict_ext_video() for like in self.likes]
+            'likes': [like.to_dict_ext_video() for like in self.likes],
+            'comments': [comment.to_dict_ext() for comment in self.comments]
         }

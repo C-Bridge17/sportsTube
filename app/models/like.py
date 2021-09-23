@@ -35,6 +35,13 @@ class Like(db.Model):
     def to_dict_ext_video(self):
         return{
             'id': self.id,
-            'commentId': self.commentId.to_dict(),
+            'videoId': self.videoId,
+            'createdAt': self.createdAt
+        }
+
+    def to_dict_ext_comment(self):
+        return{
+            'id': self.id,
+            'commentId': self.commentId,
             'createdAt': self.createdAt
         }

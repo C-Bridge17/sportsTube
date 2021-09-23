@@ -28,7 +28,7 @@ class Comment(db.Model):
         return{
             'id': self.id,
             'user': self.user.to_dict(),
-            'video': self.video.to_dict(),
             'content': self.content,
-            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S')
+            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S'),
+            'likes': [like.to_dict_ext_comment() for like in self.likes]
         }
