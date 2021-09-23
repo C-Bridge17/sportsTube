@@ -15,7 +15,7 @@ userId = faker.random_int(min=1, max=53)
 def seed_comments():
     for i in range(150):
         comment = Comment(userId=faker.random_int(min=1, max=71), videoId=faker.random_int(
-            min=1, max=163), content=faker.sentence(), createdAt=faker.date())
+            min=1, max=150), content=faker.sentence(), createdAt=faker.date())
         db.session.add(comment)
     db.session.commit()
 
