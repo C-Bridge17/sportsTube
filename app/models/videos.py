@@ -25,11 +25,12 @@ class Video(db.Model):
             'createdAt': self.createdAt
         }
 
-    def to_dict(self):
+    def to_dict_ext(self):
         return {
             'id': self.id,
             'caption': self.caption,
             'videoUrl': self.videoUrl,
             'userId': self.user.to_dict(),
-            'createdAt': self.createdAt
+            'createdAt': self.createdAt,
+            'likes': [like.to_dict_ext_video() for like in self.likes]
         }

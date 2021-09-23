@@ -31,3 +31,10 @@ class Like(db.Model):
             'commentId': self.commentId.to_dict(),
             'createdAt': self.createdAt
         }
+
+    def to_dict_ext_video(self):
+        return{
+            'id': self.id,
+            'commentId': self.commentId.to_dict(),
+            'createdAt': self.createdAt
+        }
