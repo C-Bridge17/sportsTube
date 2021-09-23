@@ -36,6 +36,7 @@ class Like(db.Model):
         return{
             'id': self.id,
             'videoId': self.videoId,
+            'userId': self.user.to_dict(),
             'createdAt': self.createdAt
         }
 

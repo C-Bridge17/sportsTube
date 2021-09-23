@@ -1,0 +1,93 @@
+.home-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.home-video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px #aaaaaa solid;
+  width: 20%;
+  height: 20%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 1%;
+}
+
+.home-video {
+  height: 135%;
+  width: 100%;
+  background-size: contain;
+  border: none;
+  z-index: 10;
+}
+.home-div {
+  height: 155%;
+  width: 100%;
+}
+
+.home-video-content {
+  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  z-index: 9;
+}
+.home-video-content:hover {
+  background: rgba(170, 170, 170, 0.2);
+}
+
+.top-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+}
+
+.home-img {
+  height: 18px;
+  width: 18px;
+  background-size: contain;
+  border-radius: 2rem;
+  margin-right: 5%;
+  align-self: center;
+}
+
+.home-likes {
+  margin-left: 5%;
+  font-size: 14px;
+  align-self: center;
+  color: #aaaaaa;
+}
+
+.home-profile-name {
+  font-size: 14px;
+  align-self: center;
+  z-index: 10;
+}
+
+.home-title {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 3%;
+}
+.bottom-content {
+  overflow: auto;
+  height: 90%;
+  width: 90%;
+}
+body {
+  background: #181818;
+  color: white;
+}
+a {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+}
