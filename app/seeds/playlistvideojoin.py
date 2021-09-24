@@ -7,7 +7,7 @@ faker = Faker()
 def seed_playlistvideojoins():
     for i in range(75):
         joins = PlaylistVideoJoin(playlistId=faker.random_int(
-            min=1, max=40), videoId=faker.random_int(min=1, max=163), createdAt=faker.date())
+            min=1, max=40), videoId=faker.random_int(min=1, max=150), createdAt=faker.date())
         db.session.add(joins)
     db.session.commit()
 
