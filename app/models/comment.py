@@ -12,7 +12,8 @@ class Comment(db.Model):
 
     user = db.relationship('User', back_populates='comments')
     video = db.relationship('Video', back_populates='comments')
-    likes = db.relationship('Like', back_populates='comment')
+    likes = db.relationship(
+        'Like', back_populates='comment', cascade='all, delete')
 
     def to_dict(self):
         return {
@@ -29,6 +30,7 @@ class Comment(db.Model):
             'id': self.id,
             'user': self.user.to_dict(),
             'content': self.content,
+            'videoId': self.videoId,
             'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S'),
             'likes': [like.to_dict_ext_comment() for like in self.likes]
         }
