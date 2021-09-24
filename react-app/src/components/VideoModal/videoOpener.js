@@ -27,6 +27,7 @@ const VideoOpener = ({ video }) => {
           <Modal onClose={() => setShowVideoModal(false)}>
             <VideoModal video={video} />
           </Modal>
+
         )
       }
     </>
