@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 import { getVideos } from '../../store/video'
 import VideoOpener from '../VideoModal/videoOpener'
 
@@ -9,7 +8,6 @@ import './home.css'
 const Home = () => {
   const dispatch = useDispatch()
   const videos = useSelector(state => Object.values(state.Videos).slice(0, 20))
-  const [showVideoModal, setShowVideoModal] = useState(false)
 
   useEffect(() => {
     (async () => {
@@ -27,9 +25,9 @@ const Home = () => {
       {videos && videos.map(video => (
         <div className='home-video-container' key={video.id}>
           <div className='home-div'>
-            <iframe className='home-video' title={`${video.id}`} key={video.id} src={`${video.videoUrl}`} allowFullScreen></iframe>
+            <iframe width="560" height="315" className='home-video' title={`${video.id}`} key={video.id} src={`${video.videoUrl}`} allowFullScreen allow="autoplay"></iframe>
           </div>
-          <VideoOpener video={video} showVideoModal={showVideoModal} setShowVideoModal={setShowVideoModal} />
+          <VideoOpener video={video} />
         </div>
       ))
       }
