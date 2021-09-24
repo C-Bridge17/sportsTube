@@ -6,7 +6,7 @@ from app.models import Video
 video_routes = Blueprint('videos', __name__)
 
 
-@video_routes.route('/')
+@video_routes.route('')
 def get_videos():
     videos = Video.query.all()
     return {'videos': [video.to_dict_ext() for video in videos]}
