@@ -22,7 +22,8 @@ def postCommment():
     )
     db.session.add(comment)
     db.session.commit()
-    return comment.to_dict()
+    comments = Comment.query.all()
+    return {'comments': [comment.to_dict_ext() for comment in comments]}
 
 
 @comment_routes.route('')
@@ -34,11 +35,12 @@ def get_comments():
 @comment_routes.route('', methods=['PUT'])
 def put_comment():
     data = request.get_json()['payload']
-    comments = Comment.query.get(data['commentId'])
-    comments.content = data['content']
-    db.session.add(comments)
+    comment = Comment.query.get(data['commentId'])
+    comment.content = data['content']
+    db.session.add(comment)
     db.session.commit()
-    return {'comments': comments.to_dict()}
+    comments = Comment.query.all()
+    return {'comments': [comment.to_dict_ext() for comment in comments]}
 
 
 @comment_routes.route('/<int:commentId>', methods=['DELETE'])
