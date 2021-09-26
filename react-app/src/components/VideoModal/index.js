@@ -42,7 +42,7 @@ const VideoModal = ({ video }) => {
 
 
   return (
-    <div>
+    <div className='video-modal-container'>
       <iframe height='440' width='800' title={`${video.id}`} key={video.id} src={`${video.videoUrl}`} allowFullScreen></iframe>
       <div>
         <div>
@@ -51,7 +51,7 @@ const VideoModal = ({ video }) => {
           <div>Likes: {`${video.likes.length}`}</div>
         </div>
         <div>{`${video.caption}`}</div>
-        <div>
+        <div className='comments-vid-modal'>
           {isUser && (
             <>
               <form onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ const VideoModal = ({ video }) => {
 
         <div>
           {comments && comments.map(comment =>
-            <div key={comment.id}>
+            <div key={comment.id} >
               <ShowComment comment={comment} sessionUser={sessionUser} isUser={isUser} video={video} />
             </div>
           )}

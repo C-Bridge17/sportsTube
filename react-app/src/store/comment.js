@@ -90,10 +90,14 @@ const commentReducer = (state = {}, action) => {
         ...state
       }
     case POST_COMMENT: {
+      const comments = {}
+      for (let comment of action.list.comments) {
+        comments[comment.id] = comment
+      }
       return {
         ...state,
-        [action.list.id]: action.list,
-      };
+        comments: comments
+      };;
     }
     case PUT_COMMENT: {
       return {
