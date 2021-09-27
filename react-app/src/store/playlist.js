@@ -49,8 +49,8 @@ export const getPlaylists = () => async (dispatch) => {
   return list
 }
 
-export const putPlaylist = (payload) => async (dispatch) => {
-  const response = await fetch(`/api/playlists`, {
+export const putPlaylist = (payload, playlistId) => async (dispatch) => {
+  const response = await fetch(`/api/playlists/${playlistId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -67,11 +67,11 @@ export const putPlaylist = (payload) => async (dispatch) => {
   return list
 }
 
-export const delPlaylist = (commentId) => async dispatch => {
-  await fetch(`/api/comments/${commentId}`, {
+export const delPlaylist = (playlistId) => async dispatch => {
+  await fetch(`/api/playlists/${playlistId}`, {
     method: 'DELETE'
   })
-  dispatch(deletePlaylist(commentId))
+  dispatch(deletePlaylist(playlistId))
 
   return
 }
@@ -95,7 +95,7 @@ const playlistReducer = (state = {}, action) => {
       }
       return {
         ...state,
-        playlists: playlists
+        ...playlists
       };;
     }
     case PUT_PLAYLIST: {
@@ -106,7 +106,7 @@ const playlistReducer = (state = {}, action) => {
       return {
         ...state,
         ...playlists
-      };;
+      };
     }
     case DEL_PLAYLIST: {
       const newState = { ...state };

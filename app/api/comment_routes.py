@@ -45,7 +45,6 @@ def put_comment():
 
 @comment_routes.route('/<int:commentId>', methods=['DELETE'])
 def delete_comment(commentId):
-    print('asdfafsdfdsasdafadfafsdsdfdffdsafdafdasfdsafd', commentId)
     comment = Comment.query.get(commentId)
     db.session.delete(comment)
     db.session.commit()

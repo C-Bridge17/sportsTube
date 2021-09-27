@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getVideos } from '../../store/video'
+import { getPlaylists } from '../../store/playlist';
 import ProfileVideos from './profileVideos';
 import ProfilePlaylist from './profilePlaylists';
 import './profile.css'
@@ -12,13 +13,16 @@ function Profile() {
   const sessionUser = useSelector(state => state.session.user);
   const subbed = sessionUser.subbed.filter(subs => subs.id === +userId)
   const videos = useSelector(state => Object.values(state.Videos).filter(vid => vid.userId.id === user.id))
+  const playlists = useSelector(state => Object.values(state.Playlists).filter(playlist => playlist.userId === +userId))
   const dispatch = useDispatch()
+  const [isOwner, setIsOwner] = useState(false)
   const [isHome, setIsHome] = useState(true)
   const [isPlaylist, setIsPlaylist] = useState(false)
 
   useEffect(() => {
     (async () => {
       await dispatch(getVideos())
+      await dispatch(getPlaylists())
     })();
 
   }, [dispatch])
@@ -38,11 +42,16 @@ function Profile() {
     return null;
   }
 
+
   const handleHomeClick = () => {
     setIsHome(true)
     setIsPlaylist(false)
   }
   const handlePlaylistClick = () => {
+    if (sessionUser.id === user.id) setIsOwner(true)
+    else setIsOwner(false)
+
+
     setIsHome(false)
     setIsPlaylist(true)
   }
@@ -82,9 +91,11 @@ function Profile() {
         ))
         }
       </div>
-      {isPlaylist && (
-        <ProfilePlaylist />
-      )}
+      <div className='playlist-container'>
+        {isPlaylist && (
+          <ProfilePlaylist playlists={playlists} isOwner={isOwner} />
+        )}
+      </div>
     </div>
   );
 }

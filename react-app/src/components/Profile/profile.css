@@ -64,3 +64,11 @@
 .fas fa-plus {
   align-self: flex-end;
 }
+
+.playlist-videos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: fit-content;
+}
