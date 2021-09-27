@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function User() {
+function Profile() {
   const [user, setUser] = useState({});
   const { userId } = useParams();
 
@@ -19,11 +19,11 @@ function User() {
   if (!user) {
     return null;
   }
-
+  console.log(user)
   return (
     <ul>
       <li>
-        <strong>User Id</strong> {userId}
+        <strong>User Id</strong> {user.id}
       </li>
       <li>
         <strong>Username</strong> {user.username}
@@ -34,4 +34,4 @@ function User() {
     </ul >
   );
 }
-export default User;
+export default Profile;

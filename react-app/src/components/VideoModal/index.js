@@ -42,18 +42,19 @@ const VideoModal = ({ video }) => {
 
 
   return (
-    <div className='video-modal-container'>
+    <>
       <iframe height='440' width='800' title={`${video.id}`} key={video.id} src={`${video.videoUrl}`} allowFullScreen></iframe>
       <div>
+        <div>{`${video.caption}`}</div>
         <div>
           <div style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
           <div>Likes: {`${video.likes.length}`}</div>
         </div>
-        <div>{`${video.caption}`}</div>
         <div className='comments-vid-modal'>
           {isUser && (
             <>
+              <div>ADD</div>
               <form onSubmit={handleSubmit}>
                 <label>Comment:</label>
                 <input
@@ -77,20 +78,17 @@ const VideoModal = ({ video }) => {
             </>
           )}
         </div>
+        <div className='comment-container'>
 
-        <div>
           {comments && comments.map(comment =>
-            <div key={comment.id} >
-              <ShowComment comment={comment} sessionUser={sessionUser} isUser={isUser} video={video} />
-            </div>
-          )}
-          {!comments.length && (
-            <p>No Comments yet be the first</p>
+            <ShowComment key={comment.id} comment={comment} sessionUser={sessionUser} isUser={isUser} video={video} />
           )}
         </div>
+        {!comments.length && (
+          <p>No Comments yet be the first</p>
+        )}
       </div>
-    </div >
-
+    </>
   )
 
 }
