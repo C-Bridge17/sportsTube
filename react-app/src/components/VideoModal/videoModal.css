@@ -1,7 +1,58 @@
-.comments-vid-modal {
-  overflow: hidden;
-}
-
 .video-modal-container {
   overflow: scroll;
+  height: 700px;
+  width: 800px;
+}
+
+.comment-container {
+  height: 150px;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.comments {
+  display: flex;
+  height: 150px;
+  width: 800px;
+  align-items: center;
+  margin-top: 2%;
+  border: honeydew 2px solid;
+}
+
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  margin-left: 5%;
+}
+
+.comment-user-info > * {
+  margin-right: 5%;
+}
+.comment-content-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-content-div > * {
+  margin-right: 20%;
+}
+.comment-input-field {
+  height: 48px;
+  width: 300px;
+  resize: none;
+  overflow: scroll;
+}
+
+.comment-content-area {
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 200px;
+  height: 50px;
 }
