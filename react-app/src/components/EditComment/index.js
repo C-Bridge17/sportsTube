@@ -22,7 +22,6 @@ const EditComment = ({ comment, sessionUser, video, setShowEdit }) => {
   }
 
   const deleteComment = (e) => {
-    console.log(comment.id)
     e.preventDefault()
     dispatch(delComment(comment.id))
     setShowEdit(false)

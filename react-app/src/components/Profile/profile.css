@@ -1,0 +1,74 @@
+.profile-container {
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(24, 24, 24, 0.5);
+  width: 100%;
+  height: 100px;
+}
+
+.profile-img-header {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 1%;
+}
+
+.header-info:not(header-username) {
+  list-style: none;
+  font-size: 15px;
+}
+
+.sub-button {
+  margin-left: 5%;
+}
+
+.profile-directions {
+  margin-top: 0.5%;
+  display: flex;
+  list-style: none;
+  width: 50%;
+  margin-left: 25%;
+  align-items: center;
+  height: 60px;
+  justify-content: center;
+  background-color: rgba(24, 24, 24, 0.5);
+}
+.profile-directions > * {
+  margin-right: 5%;
+  color: #aaaaaa;
+}
+
+.profile-directions > *:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.fas fa-plus {
+  align-self: flex-end;
+}
+
+.playlist-videos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: fit-content;
+}

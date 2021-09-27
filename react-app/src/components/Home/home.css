@@ -44,12 +44,13 @@
 }
 
 .home-img {
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
   background-size: contain;
   border-radius: 2rem;
   margin-right: 5%;
   align-self: center;
+  background-repeat: no-repeat;
 }
 
 .home-likes {
@@ -57,6 +58,7 @@
   font-size: 14px;
   align-self: center;
   color: #aaaaaa;
+  display: flex;
 }
 
 .home-profile-name {
@@ -78,7 +80,7 @@
   cursor: pointer;
 }
 body {
-  background: #181818;
+  background: #000000;
   color: white;
 }
 a {

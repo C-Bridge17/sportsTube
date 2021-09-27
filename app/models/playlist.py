@@ -25,6 +25,7 @@ class Playlist(db.Model):
         return{
             'id': self.id,
             'title': self.title,
-            'userId': self.user.to_dict(),
+            'userId': self.userId,
+            'videos': [videos.to_dict() for videos in self.playlist_content],
             'default': self.default
         }
