@@ -50,6 +50,7 @@
   border-radius: 2rem;
   margin-right: 5%;
   align-self: center;
+  background-repeat: no-repeat;
 }
 
 .home-likes {
@@ -78,7 +79,7 @@
   cursor: pointer;
 }
 body {
-  background: #181818;
+  background: #000000;
   color: white;
 }
 a {
