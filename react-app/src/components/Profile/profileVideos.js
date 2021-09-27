@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from '../../context/Modal'
+import AddToPlaylistModal from '../AddToPlaylistModal'
 
 
 
 const ProfileVideos = ({ video }) => {
+
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false)
 
   return (
     <div className='home-video-container' key={video.id}>
@@ -12,9 +16,21 @@ const ProfileVideos = ({ video }) => {
       <div className='home-video-content' >
         <div className='top-content'>
           <div className='home-img' style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
-          <div className='home-likes'>Likes: {`${video.likes.length}`}</div>
+          <div className='home-likes'>
+            <i className="fas fa-thumbs-up">
+              {`   ${video.likes.length}`}</i>
+          </div>
+          <div className='add-to-playlist' onClick={() => setShowPlaylistModal(true)}>
+            <i class="fas fa-plus"></i>
+          </div>
         </div>
         <div className='home-title'>{`${video.caption}`}</div>
+        {showPlaylistModal && (
+          <Modal onClose={() => setShowPlaylistModal(false)}>
+            <AddToPlaylistModal video={video} />
+          </Modal>
+
+        )}
 
       </div>
     </div>

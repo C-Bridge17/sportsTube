@@ -44,8 +44,8 @@
 }
 
 .home-img {
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
   background-size: contain;
   border-radius: 2rem;
   margin-right: 5%;
@@ -58,6 +58,7 @@
   font-size: 14px;
   align-self: center;
   color: #aaaaaa;
+  display: flex;
 }
 
 .home-profile-name {

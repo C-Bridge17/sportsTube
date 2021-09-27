@@ -49,12 +49,13 @@ const VideoModal = ({ video }) => {
         <div>
           <div style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
-          <div>Likes: {`${video.likes.length}`}</div>
+          <div><i className="fas fa-thumbs-up">
+            {`   ${video.likes.length}`}</i></div>
         </div>
         <div className='comments-vid-modal'>
           {isUser && (
             <>
-              <div>ADD</div>
+              <i class="fas fa-plus"></i>
               <form onSubmit={handleSubmit}>
                 <label>Comment:</label>
                 <input

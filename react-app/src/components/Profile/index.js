@@ -76,7 +76,7 @@ function Profile() {
         <li onClick={handlePlaylistClick}>Playlists</li>
 
       </ul>
-      <div className='home-container'>
+      <div className='profile-container'>
         {isHome && videos && videos.map(video => (
           <ProfileVideos key={video.id} video={video} />
         ))

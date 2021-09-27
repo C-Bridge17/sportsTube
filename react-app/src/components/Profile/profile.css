@@ -1,3 +1,12 @@
+.profile-container {
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  height: 100%;
+  overflow: scroll;
+}
+
 .profile-div {
   display: flex;
   flex-direction: column;
@@ -50,4 +59,8 @@
 .profile-directions > *:hover {
   cursor: pointer;
   color: white;
+}
+
+.fas fa-plus {
+  align-self: flex-end;
 }
