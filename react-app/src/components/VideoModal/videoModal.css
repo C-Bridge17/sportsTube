@@ -16,7 +16,7 @@
 .comments {
   display: flex;
   height: 150px;
-  width: 800px;
+  width: 95%;
   align-items: center;
   margin-top: 2%;
   border: honeydew 2px solid;
