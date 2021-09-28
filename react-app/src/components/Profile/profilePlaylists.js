@@ -26,18 +26,21 @@ const ProfilePlaylist = ({ playlists, isOwner }) => {
   return (
     <>
       {isOwner && (
-        <form onSubmit={handleSubmit}>
-          <input
-            required
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          ></input>
-          <button>Submit</button>
-          <button type='button'>Cancel</button>
-        </form>
+        <div className='new-playlist-form'>
+          <h4>New Playlist</h4>
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            ></input>
+            <button>Submit</button>
+            <button type='button' onClick={() => setTitle('')}>Cancel</button>
+          </form>
+        </div>
       )}
       {playlists && playlists.map(playlist =>
-        <div key={playlist.id}>
+        <div key={playlist.id} className='playlist-holder'>
           <EditPlaylistOpen playlist={playlist} />
           <div className='playlist-videos'>
             {playlist.videos && playlist.videos.map(video =>

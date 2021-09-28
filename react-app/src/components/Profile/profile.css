@@ -5,6 +5,7 @@
   margin-left: 10%;
   height: 100%;
   overflow: scroll;
+  justify-content: center;
 }
 
 .profile-div {
@@ -67,8 +68,44 @@
 
 .playlist-videos {
   display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+.playlist-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: honeydew 2px solid;
+  width: 95%;
+  margin-bottom: 5%;
+  margin-left: 2.5%;
+}
+
+.new-playlist-form {
+  display: flex;
   width: 100%;
-  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+.new-playlist-form > form {
+  margin-left: 2%;
+}
+
+.new-playlist-form > form > input {
+  border: none;
+}
+
+.new-playlist-form > form > button {
+  color: #aaaaaa;
+  border: #aaaaaa;
+  background-color: transparent;
+  padding: 5px;
+  margin-left: 6px;
+}
+
+.new-playlist-form > form > button:hover {
+  color: white;
+  cursor: pointer;
 }

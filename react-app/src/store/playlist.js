@@ -148,12 +148,13 @@ const playlistReducer = (state = {}, action) => {
       return newState;
     }
     case DEL_JOINS_PLAYLIST: {
-      const newState = { ...state };
-      delete newState[action.playlistId];
-
+      for (let playlist of action.list.playlists) {
+        playlists[playlist.id] = playlist
+      }
       return {
-        ...newState
-      };
+        ...playlists,
+        ...state
+      }
     }
     default:
       return state
