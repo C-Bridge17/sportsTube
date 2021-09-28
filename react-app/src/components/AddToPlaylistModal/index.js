@@ -45,7 +45,7 @@ const AddToPlaylistModal = ({ video }) => {
 
 
   return (
-    <>
+    <div>
       <form>
         {playlists && playlists.map(playlist =>
           <>
@@ -62,7 +62,7 @@ const AddToPlaylistModal = ({ video }) => {
           </>
         )}
       </form>
-    </>
+    </div>
   )
 }
 

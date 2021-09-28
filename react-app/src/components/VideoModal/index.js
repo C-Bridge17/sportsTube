@@ -54,7 +54,7 @@ const VideoModal = ({ video }) => {
           <div><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
           <div><i className="fas fa-thumbs-up">
             {`   ${video.likes.length}`}</i></div>
-          <i class="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
+          <i className="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='comments-vid-modal'>
           {isUser && (
