@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import VideoModal from './index';
 import { Modal } from '../../context/Modal'
 import { NavLink } from 'react-router-dom'
+import AddToPlaylistModal from '../AddToPlaylistModal'
 
 
 const VideoOpener = ({ video }) => {
   const [showVideoModal, setShowVideoModal] = useState(false)
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false)
   const openModal = () => {
     setShowVideoModal(true)
   }
@@ -17,6 +19,7 @@ const VideoOpener = ({ video }) => {
           <div className='home-img' style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div className='home-profile-name'><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
           <div className='home-likes'>Likes: {`${video.likes.length}`}</div>
+          <i class="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='bottom-content' onClick={openModal}>
           <div className='home-title'>{`${video.caption}`}</div>
@@ -30,6 +33,12 @@ const VideoOpener = ({ video }) => {
 
         )
       }
+      {showPlaylistModal && (
+        <Modal onClose={() => setShowPlaylistModal(false)}>
+          <AddToPlaylistModal video={video} />
+        </Modal>
+
+      )}
     </>
   )
 

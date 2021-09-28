@@ -1,8 +1,9 @@
 .home-container {
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-wrap: wrap;
   margin-left: 10%;
+  margin-right: 5%;
   height: 100%;
   overflow: scroll;
 }
@@ -77,6 +78,7 @@
   width: 90%;
 }
 .bottom-content:hover {
+  color: #aaaaaa;
   cursor: pointer;
 }
 body {

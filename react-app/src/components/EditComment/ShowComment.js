@@ -23,7 +23,7 @@ const ShowComment = ({ comment, sessionUser, isUser, video }) => {
           )}
           <div className='comment-content-area' hidden={showEdit}>{`${comment?.content}`}</div>
           {isUser && comment?.user.id === sessionUser?.id && !showEdit && (
-            <div onClick={() => editHandler(comment)} > <i class="fas fa-pen"></i></div>
+            <div onClick={() => editHandler(comment)} > <i className="fas fa-pen"></i></div>
           )}
           <div ><i className="fas fa-thumbs-up">{` ${comment?.likes?.length}`}</i></div>
         </div>

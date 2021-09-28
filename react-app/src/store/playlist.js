@@ -2,6 +2,7 @@ const LOAD_PLAYLIST = 'playlists/LOAD_PLAYLIST'
 const POST_PLAYLIST = "playlists/ADD_PLAYLIST"
 const DEL_PLAYLIST = "playlists/DEL_PLAYLIST"
 const PUT_PLAYLIST = "playlists/PUT_PLAYLIST"
+const DEL_JOINS_PLAYLIST = "playlists/DEL_JOINS_PLAYLIST"
 
 
 const addPlaylist = list => ({
@@ -21,6 +22,39 @@ const deletePlaylist = list => ({
   type: DEL_PLAYLIST,
   list,
 })
+const deleteJoinsPlaylist = (list, playlistId) => ({
+  type: DEL_JOINS_PLAYLIST,
+  list,
+  playlistId
+})
+
+export const addVideo = (payload) => async dispatch => {
+  const res = await fetch('/api/playlists/video', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      payload
+    }),
+  })
+  const list = await res.json()
+  if (res.ok) {
+    dispatch(updatePlaylist(list))
+  }
+  return list
+}
+export const delVideoFromPlaylist = (joinsId, playlistId) => async dispatch => {
+  await fetch(`/api/playlists/video/${joinsId}`, {
+    method: 'DELETE'
+  })
+  console.log(playlistId)
+  dispatch(deleteJoinsPlaylist(joinsId, playlistId))
+
+  return
+}
+
+
 
 export const postPlaylist = (payload) => async dispatch => {
   const res = await fetch('/api/playlists', {
@@ -112,6 +146,14 @@ const playlistReducer = (state = {}, action) => {
       const newState = { ...state };
       delete newState[action.list];
       return newState;
+    }
+    case DEL_JOINS_PLAYLIST: {
+      const newState = { ...state };
+      delete newState[action.playlistId];
+
+      return {
+        ...newState
+      };
     }
     default:
       return state

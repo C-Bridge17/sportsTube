@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { getComments, postComment } from '../../store/comment'
 import ShowComment from '../EditComment/ShowComment';
+import AddToPlaylistModal from '../AddToPlaylistModal'
+import { Modal } from '../../context/Modal'
 import './videoModal.css'
 
 
@@ -10,6 +12,7 @@ const VideoModal = ({ video }) => {
   const sessionUser = useSelector(state => state.session.user);
   const comments = useSelector(state => Object.values(state.Comments).filter(el => el.videoId === video.id).sort((a, b) => b.id - a.id))
   const [newComment, setNewComment] = useState('')
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false)
   const dispatch = useDispatch()
   const [isUser, setIsUser] = useState(false)
 
@@ -55,7 +58,7 @@ const VideoModal = ({ video }) => {
         <div className='comments-vid-modal'>
           {isUser && (
             <>
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
               <form onSubmit={handleSubmit}>
                 <label>Comment:</label>
                 <input
@@ -89,8 +92,15 @@ const VideoModal = ({ video }) => {
           <p>No Comments yet be the first</p>
         )}
       </div>
+      {showPlaylistModal && (
+        <Modal onClose={() => setShowPlaylistModal(false)}>
+          <AddToPlaylistModal video={video} />
+        </Modal>
+
+      )}
     </>
   )
+
 
 }
 export default VideoModal
