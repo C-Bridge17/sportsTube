@@ -56,3 +56,54 @@
   width: 200px;
   height: 50px;
 }
+
+.top-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.top-content > * {
+  margin-left: 5%;
+}
+
+.video-modal-content {
+  display: flex;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  align-items: center;
+}
+.video-modal-content > * {
+  margin-left: 5%;
+}
+
+.video-modal-profile-img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-size: contain;
+}
+.video-modal-content-container > * {
+  margin-left: 2%;
+}
+
+.comment-form {
+  display: flex;
+}
+.comment-form > * {
+  margin-left: 5px;
+}
+.comment-form > * > * {
+  margin-left: 5px;
+}
+
+.comment-form > form > input {
+  border: none;
+}
+.comment-form > form > button {
+  color: #aaaaaa;
+  background: none;
+  border: none;
+}
+.comment-form > form > button:hover {
+  color: white;
+}
