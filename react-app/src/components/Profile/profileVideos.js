@@ -21,7 +21,7 @@ const ProfileVideos = ({ video }) => {
               {`   ${video.likes.length}`}</i>
           </div>
           <div className='add-to-playlist' onClick={() => setShowPlaylistModal(true)}>
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </div>
         </div>
         <div className='home-title'>{`${video.caption}`}</div>
