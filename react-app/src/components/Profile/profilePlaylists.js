@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProfileVideos from './profileVideos';
 import { useDispatch, useSelector } from 'react-redux';
 import EditPlaylistOpen from '../EditPlaylist/editPlaylistOpen';
 import { postPlaylist } from '../../store/playlist'
+import PlaylistVideoSeperator from './PlaylistVideoSeperator'
 
 const ProfilePlaylist = ({ playlists, isOwner }) => {
   const [title, setTitle] = useState('')
@@ -18,8 +19,6 @@ const ProfilePlaylist = ({ playlists, isOwner }) => {
     await dispatch(postPlaylist(payload))
     setTitle('')
   }
-
-
 
 
 
@@ -43,8 +42,8 @@ const ProfilePlaylist = ({ playlists, isOwner }) => {
         <div key={playlist.id} className='playlist-holder'>
           <EditPlaylistOpen playlist={playlist} />
           <div className='playlist-videos'>
-            {playlist.videos && playlist.videos.map(video =>
-              <ProfileVideos key={video.id} video={video.video} />
+            {playlist.videos && (
+              <PlaylistVideoSeperator videos={playlist.videos} />
             )}
           </div>
         </div>

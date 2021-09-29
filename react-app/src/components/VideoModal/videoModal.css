@@ -107,3 +107,14 @@
 .comment-form > form > button:hover {
   color: white;
 }
+
+button {
+  color: #aaaaaa;
+  background: none;
+  border: none;
+}
+
+button:hover {
+  color: white;
+  cursor: pointer;
+}

@@ -1,8 +1,7 @@
 .profile-container {
   display: flex;
-  width: 90%;
+  width: 100%;
   flex-wrap: wrap;
-  margin-left: 10%;
   height: 100%;
   overflow: scroll;
   justify-content: center;
@@ -12,6 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 55px;
 }
 
 .profile-header {
@@ -68,9 +68,23 @@
 
 .playlist-videos {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
-  overflow-x: scroll;
 }
+/* width .playlist-videos::-webkit-scrollbar {
+  width: 10px;
+}
+Track .playlist-videos::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+Handle .playlist-videos::-webkit-scrollbar-thumb {
+  background: #aaaaaa;
+}
+Handle on hover .playlist-videos::-webkit-scrollbar-thumb:hover {
+  background: white;
+} */
 .playlist-holder {
   display: flex;
   flex-direction: column;
@@ -108,4 +122,15 @@
 .new-playlist-form > form > button:hover {
   color: white;
   cursor: pointer;
+}
+
+.playlist-video-seperate {
+  display: flex;
+}
+
+.playlist-sliders {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
