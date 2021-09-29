@@ -10,6 +10,7 @@ const AddToPlaylistModal = ({ video }) => {
   const dispatch = useDispatch()
   const [title, setTitle] = useState('')
 
+
   useEffect(() => {
     (async () => {
       await dispatch(getPlaylists())
@@ -18,6 +19,8 @@ const AddToPlaylistModal = ({ video }) => {
 
   const handleChange = async (playlist, e) => {
     e.preventDefault()
+
+    console.log(video.id, playlist.id)
     let found = playlist.videos.filter(el => el.video.id === video.id)
     if (!found.length) {
       let payload = {
@@ -27,13 +30,14 @@ const AddToPlaylistModal = ({ video }) => {
       await dispatch(addVideo(payload))
     }
     if (found.length) {
-      await dispatch(delVideoFromPlaylist(found[0].id, playlist.id))
+      await dispatch(delVideoFromPlaylist(found[0].id, found[0].video.id, playlist.id))
     }
-    await dispatch(getPlaylists())
-
-
-
+    return
   }
+
+  useEffect(() => {
+
+  }, [handleChange])
   const handleSubmit = async (e) => {
     e.preventDefault()
     let payload = {
@@ -83,7 +87,7 @@ const AddToPlaylistModal = ({ video }) => {
                 name={`${playlist.title}`}
                 value={`${playlist.id}`}
                 checked={checker(playlist)}
-                onChange={(e) => handleChange(playlist, e)}
+                onChange={(e) => setTimeout(handleChange(playlist, e), [350])}
               ></input>
             </div>
           )}

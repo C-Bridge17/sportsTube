@@ -68,5 +68,4 @@ def delete_video(playlistJoinsId):
     video = PlaylistVideoJoin.query.get(playlistJoinsId)
     db.session.delete(video)
     db.session.commit()
-    playlists = Playlist.query.all()
-    return {'playlists': [playlist.to_dict_ext() for playlist in playlists]}
+    return 'video removed from playlist'
