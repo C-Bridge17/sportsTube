@@ -14,7 +14,7 @@
 .profile-dropdown {
   float: right;
   position: absolute;
-  top: 29px;
+  top: 40px;
   right: 402px;
   overflow: hidden;
   max-height: 200px;
@@ -28,6 +28,7 @@
 .profile-dropdown > * {
   margin-top: 10px;
 }
+
 .inner-nav {
   display: flex;
   flex-direction: row;
@@ -55,4 +56,22 @@
   z-index: 15;
   list-style: none;
   background-color: rgba(24, 24, 24, 1);
+}
+.search-dropdown > * {
+  margin: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.search-dropdown > * > * {
+  margin-right: 10px;
+}
+
+.search-dropdown > li :hover {
+  background-color: #aaaaaa;
+  color: white;
+}
+.fa-home {
+  font-size: 25px;
 }

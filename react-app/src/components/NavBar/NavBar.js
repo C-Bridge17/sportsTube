@@ -78,6 +78,8 @@ const NavBar = () => {
 
     return () => document.removeEventListener("click", closeMenu);
   }, [profileDropDown]);
+
+
   return (
     <nav className='nav-bar'>
       <div className='inner-nav'>
