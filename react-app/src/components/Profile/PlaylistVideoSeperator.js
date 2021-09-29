@@ -8,25 +8,24 @@ const PlaylistVideoSeperator = ({ videos }) => {
   const Next = (e) => {
     e.preventDefault()
     if (end >= videos.length) return
-    let next1 = start + 1
-    let next2 = end + 1
+    let next1 = start + 4
+    let next2 = end + 4
     setStart(next1)
     setEnd(next2)
   }
   const Back = (e) => {
     e.preventDefault()
     if (start === 0) return
-    let next1 = start - 1
-    let next2 = end - 1
+    let next1 = start - 4
+    let next2 = end - 4
     setStart(next1)
     setEnd(next2)
-
   }
   return (
     <>
       <div className='playlist-video-seperate'>
         {videos && videos.slice(start, end).map(video =>
-          <ProfileVideos key={video.id} video={video.video} />
+          <ProfileVideos key={video.video.id} video={video.video} />
         )
         }
       </div >

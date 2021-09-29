@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ProfileVideos from './profileVideos';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import EditPlaylistOpen from '../EditPlaylist/editPlaylistOpen';
 import { postPlaylist } from '../../store/playlist'

@@ -44,12 +44,12 @@ export const addVideo = (payload) => async dispatch => {
   }
   return list
 }
-export const delVideoFromPlaylist = (joinsId, playlistId) => async dispatch => {
+export const delVideoFromPlaylist = (joinsId, videoId, playlistId) => async dispatch => {
+  console.log(joinsId)
   await fetch(`/api/playlists/video/${joinsId}`, {
     method: 'DELETE'
   })
-  console.log(playlistId)
-  dispatch(deleteJoinsPlaylist(joinsId, playlistId))
+  dispatch(deleteJoinsPlaylist(videoId, playlistId))
 
   return
 }
@@ -149,7 +149,7 @@ const playlistReducer = (state = {}, action) => {
     }
     case DEL_JOINS_PLAYLIST: {
       const newState = { ...state };
-      delete newState[action.playlistId]
+      newState[action.playlistId].videos = newState[action.playlistId].videos.filter(el => el.video.id !== action.list);
       return {
         ...newState
       };

@@ -9,8 +9,8 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [demoEmail, setDemoEmail] = useState('demo@aa.io');
-  const [demoPassword, setDemoPassword] = useState('password');
+  const [demoEmail] = useState('demo@aa.io');
+  const [demoPassword] = useState('password');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 

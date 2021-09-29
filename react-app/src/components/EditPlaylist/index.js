@@ -5,7 +5,7 @@ import { putPlaylist } from "../../store/playlist"
 
 const EditPlaylist = ({ setShowEdit, playlist }) => {
   const [title, setTitle] = useState(playlist.title)
-  const [id, setId] = useState(playlist.id)
+  const [id] = useState(playlist.id)
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
