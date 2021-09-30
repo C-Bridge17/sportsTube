@@ -33,7 +33,7 @@ SportsTube is a web application that allows users to view videos mainly about sp
 ***
 
 ### Key Features
-- CSRUF library used to prevent csrf attacks
+- CSURF library used to prevent csrf attacks
 - Logged in users can view, comment and categorize videos.
 - Redux Store State is used to manage data on the front end
 - Videos are from (www.youtube.com)
