@@ -10,8 +10,11 @@ const EditPlaylist = ({ setShowEdit, playlist }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (title.trim() === '') return
+
     let payload = {
-      title: title
+      title: title.trim(),
     }
     dispatch(putPlaylist(payload, id))
     setShowEdit(false)

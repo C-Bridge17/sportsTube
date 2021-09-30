@@ -25,10 +25,42 @@
   width: 125px;
 }
 
+.about-me-dropdown {
+  float: right;
+  position: absolute;
+  top: 40px;
+  right: 550px;
+  overflow: hidden;
+  z-index: 15;
+  list-style: none;
+  background-color: rgba(24, 24, 24, 1);
+  height: 136px;
+  width: 133px;
+}
+.about-me-dropdown > * {
+  margin-right: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: 50px;
+}
+
 .profile-dropdown > * {
   margin-top: 10px;
 }
-
+.fa-github-square {
+  font-size: 34px;
+  margin-right: 25px;
+  margin-top: 5px;
+}
+.fa-linkedin {
+  font-size: 34px;
+  margin-top: 5px;
+}
+.copy {
+  margin-top: 15px;
+}
 .inner-nav {
   display: flex;
   flex-direction: row;

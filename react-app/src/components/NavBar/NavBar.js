@@ -12,6 +12,7 @@ const NavBar = () => {
   const [search, setSearch] = useState('')
   const [users, setUsers] = useState([])
   const [filteredSearch, setFilteredSearch] = useState([])
+  const [aboutDropDown, setShowAboutDropdown] = useState(false)
   const debouncedSearch = useDebounce(search, 315);
   const history = useHistory()
 
@@ -79,6 +80,17 @@ const NavBar = () => {
     return () => document.removeEventListener("click", closeMenu);
   }, [profileDropDown]);
 
+  useEffect(() => {
+    if (!aboutDropDown) return;
+
+    const closeMenu = () => {
+      setShowAboutDropdown(false);
+    };
+    document.addEventListener('click', closeMenu);
+
+    return () => document.removeEventListener("click", closeMenu);
+  }, [aboutDropDown]);
+
 
   return (
     <nav className='nav-bar'>
@@ -103,6 +115,7 @@ const NavBar = () => {
         <NavLink to='/' exact={true} activeClassName='active'>
           <i className="fas fa-home"></i>
         </NavLink>
+        <div onClick={() => setShowAboutDropdown(true)}> About Me</div>
         <div className='home-img' onClick={() => setProfileDropDown(true)} style={{ backgroundImage: `url(${user?.profileImgUrl})` }}></div>
 
         {profileDropDown && (
@@ -113,6 +126,26 @@ const NavBar = () => {
             <li>
               <LogoutButton />
             </li>
+          </ul>
+        )}
+
+        {aboutDropDown && (
+          <ul className='about-me-dropdown'>
+
+
+            <div className="about-me">
+
+              <li>Curtis Bridge</li>
+              <li><a href='https://github.com/C-Bridge17' target='blank'>
+                <i className="fab fa-github-square icon"></i>
+              </a>
+                <a href='https://www.linkedin.com/in/curtis-bridge-b126b121a/' target='blank'>
+                  <i className="fab fa-linkedin icon"></i>
+                </a>
+              </li>
+
+              <li className='copy'>&copy; Copyright 2021, curtis</li>
+            </div>
           </ul>
         )}
       </div>

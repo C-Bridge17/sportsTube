@@ -30,10 +30,13 @@ const VideoModal = ({ video }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (newComment.trim() === '') return
+
     let payload = {
       userId: sessionUser.id,
       videoId: video.id,
-      content: newComment
+      content: newComment.trim()
     }
 
     await dispatch(postComment(payload))
