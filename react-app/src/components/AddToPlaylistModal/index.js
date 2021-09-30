@@ -72,7 +72,6 @@ const AddToPlaylistModal = ({ video }) => {
             onChange={(e) => setTitle(e.target.value)}
           ></input>
           <button>Submit</button>
-          <button type='button' onClick={() => setTitle('')}>Cancel</button>
         </form>
       </div>
       <form>

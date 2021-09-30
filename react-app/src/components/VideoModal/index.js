@@ -11,6 +11,7 @@ import './videoModal.css'
 const VideoModal = ({ video }) => {
   const sessionUser = useSelector(state => state.session.user);
   const comments = useSelector(state => Object.values(state.Comments).filter(el => el.videoId === video.id).sort((a, b) => b.id - a.id))
+  const [showCommentForm, setShwoCommentForm] = useState(false)
   const [newComment, setNewComment] = useState('')
   const [showPlaylistModal, setShowPlaylistModal] = useState(false)
   const dispatch = useDispatch()
@@ -47,6 +48,11 @@ const VideoModal = ({ video }) => {
 
   }
 
+  // const handleLike = (e) => {
+  //   e.preventDefault()
+
+  // }
+
 
 
   return (
@@ -57,15 +63,16 @@ const VideoModal = ({ video }) => {
         <div className='video-modal-content'>
           <div className='video-modal-profile-img' style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
-          <div><i className="fas fa-thumbs-up">
-            {`   ${video.likes.length}`}</i></div>
+          {/* <button type='button' onClick={handleLike}><i className="fas fa-thumbs-up">
+            {`   ${video.likes.length}`}</i></button> */}
           <i className="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='comments-vid-modal'>
-          {isUser && (
+          <button hidden={showCommentForm} onClick={() => setShwoCommentForm(true)}>Leave a Comment</button>
+          {isUser && showCommentForm && (
             <div className='comment-form'>
               <form onSubmit={handleSubmit}>
-                <label>Comment:</label>
+                <label>Comment: </label>
                 <input
                   required
                   value={newComment}
@@ -74,17 +81,6 @@ const VideoModal = ({ video }) => {
                 <button>Submit</button>
               </form>
             </div>
-          )}
-          {!isUser && (
-            <>
-              <form>
-                <label>Comment: </label>
-                <input disabled></input>
-                <button disabled>Submit</button>
-              </form>
-              <label>Log in to leave a comment: </label>
-              <button>Log in</button>
-            </>
           )}
         </div>
         <div className='comment-container'>

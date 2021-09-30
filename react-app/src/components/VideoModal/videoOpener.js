@@ -18,7 +18,7 @@ const VideoOpener = ({ video }) => {
         <div className='top-content'>
           <div className='home-img' style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div className='home-profile-name'><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
-          <div className='home-likes'><i className="fas fa-thumbs-up">{`     ${video.likes.length}`}</i></div>
+          {/* <button className='home-likes'><i className="fas fa-thumbs-up">{`     ${video.likes.length}`}</i></button> */}
           <i className="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='bottom-content' onClick={openModal}>

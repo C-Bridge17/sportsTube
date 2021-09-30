@@ -51,7 +51,6 @@ export const addVideo = (payload) => async dispatch => {
   return list
 }
 export const delVideoFromPlaylist = (joinsId, videoId, playlistId) => async dispatch => {
-  console.log(joinsId)
   await fetch(`/api/playlists/video/${joinsId}`, {
     method: 'DELETE'
   })

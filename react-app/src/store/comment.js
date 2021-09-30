@@ -96,7 +96,7 @@ const commentReducer = (state = {}, action) => {
       }
       return {
         ...state,
-        comments: comments
+        ...comments
       };;
     }
     case PUT_COMMENT: {

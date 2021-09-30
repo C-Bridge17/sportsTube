@@ -25,7 +25,7 @@ const ShowComment = ({ comment, sessionUser, isUser, video }) => {
           {isUser && comment?.user.id === sessionUser?.id && !showEdit && (
             <div onClick={() => editHandler(comment)} > <i className="fas fa-pen"></i></div>
           )}
-          <div ><i className="fas fa-thumbs-up">{` ${comment?.likes?.length}`}</i></div>
+          {/* <button><i className="fas fa-thumbs-up">{` ${comment?.likes?.length}`}</i></button> */}
         </div>
       </div>
     </>
