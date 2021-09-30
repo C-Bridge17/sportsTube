@@ -105,3 +105,7 @@ a:hover {
 .page-selector > * {
   margin-right: 5%;
 }
+.fa-plus:hover {
+  cursor: pointer;
+  color: white;
+}
