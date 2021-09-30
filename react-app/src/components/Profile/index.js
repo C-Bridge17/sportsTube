@@ -22,9 +22,6 @@ function Profile() {
     if (videos.length === 0) {
       handlePlaylistClick()
     }
-    if (videos.length > 0) {
-      handleHomeClick()
-    }
     return
   }, [videos])
 
@@ -59,8 +56,6 @@ function Profile() {
   const handlePlaylistClick = () => {
     if (sessionUser.id === user.id) setIsOwner(true)
     else setIsOwner(false)
-
-
     setIsHome(false)
     setIsPlaylist(true)
   }
@@ -90,7 +85,7 @@ function Profile() {
       </div>
       <ul className='profile-directions'>
         {videos.length > 0 && (
-          <li onClick={handleHomeClick}>Home</li>
+          <li onClick={handleHomeClick}>{`${user?.username}`} Videos</li>
         )}
         <li onClick={handlePlaylistClick}>Playlists</li>
 

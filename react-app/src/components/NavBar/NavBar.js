@@ -115,8 +115,8 @@ const NavBar = () => {
         <NavLink to='/' exact={true} activeClassName='active'>
           <i className="fas fa-home"></i>
         </NavLink>
-        <div onClick={() => setShowAboutDropdown(true)}> About Me</div>
-        <div className='home-img' onClick={() => setProfileDropDown(true)} style={{ backgroundImage: `url(${user?.profileImgUrl})` }}></div>
+        <button onClick={() => setShowAboutDropdown(true)}> About Me</button>
+        <button className='home-img' onClick={() => setProfileDropDown(true)} style={{ backgroundImage: `url(${user?.profileImgUrl})` }}></button>
 
         {profileDropDown && (
           <ul className='profile-dropdown'>
