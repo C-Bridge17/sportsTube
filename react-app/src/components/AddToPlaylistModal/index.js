@@ -38,8 +38,11 @@ const AddToPlaylistModal = ({ video }) => {
   }, [handleChange])
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (title.trim() === '') return
+
     let payload = {
-      title,
+      title: title.trim(),
       userId: sessionUser.id
     }
     await dispatch(postPlaylist(payload))

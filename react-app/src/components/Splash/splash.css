@@ -39,11 +39,12 @@
   width: 675px;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 290px;
+  margin-left: 545px;
 }
 .splash-video {
   height: 720px;
   width: 720px;
   background-size: contain;
   background-repeat: no-repeat;
+  margin-left: 32px;
 }
