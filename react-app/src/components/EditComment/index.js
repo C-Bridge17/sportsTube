@@ -10,7 +10,8 @@ const EditComment = ({ comment, sessionUser, video, setShowEdit }) => {
 
   const editSubmit = (e) => {
     e.preventDefault()
-
+    if (editComment.trim() === '') return
+    if (editComment.trim().length > 120) return alert('Comment is to long.')
     let payload = {
       commentId: comment.id,
       userId: sessionUser.id,
