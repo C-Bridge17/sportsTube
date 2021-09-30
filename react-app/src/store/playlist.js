@@ -162,7 +162,7 @@ const playlistReducer = (state = {}, action) => {
     }
     case UPDATE_JOINS_PLAYLIST: {
       const newState = { ...state }
-      newState[action.list.video[0].playlistId].videos = [...action.list.video]
+      newState[action.list.video[0].playlistId].videos.push(action.list.video[0])
       return {
         ...state,
         ...newState
