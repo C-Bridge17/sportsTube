@@ -85,7 +85,7 @@ const Splash = () => {
         <div hidden={!(currentShow === 5) || !(showLogIn === true)}>
           <div>
             <p>
-              The this the playlist pop up where add new playlists to store videos that you would like to watch later.</p>
+              This is the playlist pop up where add new playlists to store videos that you would like to watch later.</p>
             <p>
               If you already have an existing playlist you would like to add a video to just click the checkbox next to the playlists name and it will be waiting in your profile page for you.
             </p>
