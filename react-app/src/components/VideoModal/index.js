@@ -44,6 +44,7 @@ const VideoModal = ({ video }) => {
 
     await dispatch(postComment(payload))
     await dispatch(getComments())
+    setShwoCommentForm(false)
     setNewComment('')
 
   }
