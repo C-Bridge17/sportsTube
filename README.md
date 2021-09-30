@@ -1,5 +1,6 @@
 # Welcome to SportsTube!
 
+![](https://github.com/C-Bridge17/sportsTube/blob/main/react-app/src/components/Splash/splash%20images/home_page.png)
 SportsTube is a web application that allows users to view videos mainly about sports. This project is inspired by [YouTube](https://www.youtube.com/), a website where individuals can view, comment and categorize videos.
 #### Live link: [SportsTube](https://sportstube.herokuapp.com/login)
 ***
