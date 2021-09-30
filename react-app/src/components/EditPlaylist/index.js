@@ -13,6 +13,7 @@ const EditPlaylist = ({ setShowEdit, playlist }) => {
 
     if (title.trim() === '') return
 
+    if (title.trim().length > 120) return alert('Playlist Title is to long.')
     let payload = {
       title: title.trim(),
     }
