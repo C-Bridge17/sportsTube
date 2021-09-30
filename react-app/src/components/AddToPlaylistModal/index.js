@@ -19,8 +19,6 @@ const AddToPlaylistModal = ({ video }) => {
 
   const handleChange = async (playlist, e) => {
     e.preventDefault()
-
-    console.log(video.id, playlist.id)
     let found = playlist.videos.filter(el => el.video.id === video.id)
     if (!found.length) {
       let payload = {

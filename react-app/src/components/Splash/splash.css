@@ -1,0 +1,49 @@
+.splash-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-button-container {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.splash-slide-container > * {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.splash-slide-container > * > * > p {
+  font-size: 24px;
+}
+
+.splash-img {
+  height: 720px;
+  width: 1186px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.splash-profile {
+  height: 720px;
+  width: 1186px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 187px;
+}
+.splash-playlist {
+  height: 720px;
+  width: 675px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 290px;
+}
+.splash-video {
+  height: 720px;
+  width: 720px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

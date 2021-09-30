@@ -43,7 +43,6 @@ const LoginForm = () => {
   }
   return (
     <div className='auth-page'>
-      <h1>SportsTube</h1>
       <div className='login-signup-page'>
         <div className='login-form'>
           <h4>Login</h4>
@@ -53,8 +52,8 @@ const LoginForm = () => {
                 <div key={ind}>{error}</div>
               ))}
             </div>
+            <label htmlFor='email'>Email </label>
             <div>
-              <label htmlFor='email'>Email </label>
               <input
                 name='email'
                 type='text'
@@ -63,8 +62,8 @@ const LoginForm = () => {
                 onChange={updateEmail}
               />
             </div>
+            <label htmlFor='password'>Password </label>
             <div>
-              <label htmlFor='password'>Password </label>
               <input
                 name='password'
                 type='password'
