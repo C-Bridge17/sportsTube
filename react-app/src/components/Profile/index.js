@@ -22,6 +22,9 @@ function Profile() {
     if (videos.length === 0) {
       handlePlaylistClick()
     }
+    if (videos.length > 0) {
+      handleHomeClick()
+    }
     return
   }, [videos])
 

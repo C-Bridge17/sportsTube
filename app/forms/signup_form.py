@@ -18,9 +18,9 @@ def username_exists(form, field):
     user = User.query.filter(User.username == username).first()
     if user:
         raise ValidationError('Username is already in use.')
-    if len(user) < 3:
+    if len(username) < 3:
         raise ValidationError('Username is to short.')
-    if len(user) > 30:
+    if len(username) > 30:
         raise ValidationError('Username is to long.')
 
 
