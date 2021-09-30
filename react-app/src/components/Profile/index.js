@@ -62,21 +62,21 @@ function Profile() {
         <div className='profile-img-header' style={{ backgroundImage: `url(${user?.profileImgUrl})` }}></div>
         <ul className='header-info'>
           <li className='header-username'>{`${user?.username}`}</li>
-          {user?.subbed?.length === 0 && (
+        </ul>
+        {/* {user?.subbed?.length === 0 && (
             <li>No Subscribers</li>
           )}
           {user?.subbed?.length > 0 && (
             <li>{`Subscribers: ${user?.subbed?.length}`}</li>
           )}
-        </ul>
-        <div className='sub-button'>
+          <div className='sub-button'>
           {subbed && (
             <button>Subscribe</button>
-          )}
-          {!subbed && (
-            <button>unSubscribe</button>
-          )}
-        </div>
+            )}
+            {!subbed && (
+              <button>unSubscribe</button>
+            )} */}
+        {/* </div> */}
 
       </div>
 
@@ -96,7 +96,7 @@ function Profile() {
           <ProfilePlaylist playlists={playlists} isOwner={isOwner} />
         )}
       </div>
-    </div>
+    </div >
   );
 }
 export default Profile;
