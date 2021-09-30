@@ -133,24 +133,6 @@ def seed_videos():
     b20 = Video(caption="Flying RC Car",
                 videoUrl="https://www.youtube.com/embed/74ZSIJk2pcg", userId=4, createdAt=faker.date())
 
-    c1 = Video(caption="SOMEONE FIND AARON JONES' CHAIN", videoUrl="https://www.youtube.com/embed/QxpitsqxDg8",
-               userId=5, createdAt=faker.date())
-    c3 = Video(caption="Aaron Rodgers welcomes Jared Goff to the NFC North",
-               videoUrl="https://www.youtube.com/embed/ZXROQ9qjcOo", userId=5, createdAt=faker.date())
-    c4 = Video(caption="0 context moment",
-               videoUrl="https://www.youtube.com/embed/8lGey0hIonY", userId=5, createdAt=faker.date())
-    c8 = Video(caption="almost the catch of the year",
-               videoUrl="https://www.youtube.com/embed/F56FCa9GtvE", userId=5, createdAt=faker.date())
-    c9 = Video(caption="poor kicker 😢",
-               videoUrl="https://www.youtube.com/embed/f_xtuDzriBY", userId=5, createdAt=faker.date())
-    c10 = Video(caption="Gronk's secret to success",
-                videoUrl="https://www.youtube.com/embed/5kvGg-HwRnM", userId=5, createdAt=faker.date())
-    c17 = Video(caption="offense.exe has temporarily stopped working",
-                videoUrl="https://www.youtube.com/embed/VhUpEX5QK-E", userId=5, createdAt=faker.date())
-    c19 = Video(caption="Ravens defense has left the chat",
-                videoUrl="https://www.youtube.com/embed/f4x-DatWdbw", userId=5, createdAt=faker.date())
-    c20 = Video(caption="Al Michaels is a savage",
-                videoUrl="https://www.youtube.com/embed/FSNlbTFcFYA", userId=5, createdAt=faker.date())
 
     d1 = Video(caption="No. 7 Texas A&M at No. 16 Arkansas Betting Preview (Best Bets, Pick to Win, & MORE) | CBS Sports HQ",
                videoUrl="https://www.youtube.com/embed/oms-umRjmic", userId=6, createdAt=faker.date())
@@ -362,7 +344,7 @@ def seed_videos():
                 videoUrl="https://www.youtube.com/embed/clp6UnDXNr0", userId=16, createdAt=faker.date())
 
     list = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10,    v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, a1, a2, a4, a5, a6, a7, a8, a9, a10,
-            a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, c1, c3, c4, c8, c9, c10, c17, c19, c20, d1, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, e2, e4, f1, f2, f3, f4, g1, g2, g3, g4, g5, g6, h1, h3, h4, h5, h6, h7, h8, h9, h10, j1, j3, j4, j5, j6, j7, j8, j9, j10, k1, k3, k4, k5, k6, k7, k8, k9, k10, i1, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, l1, l3, l4, l5, l6, l7, l8, m1, m3, m4, m5, m6, m7]
+            a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, d1, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, e2, e4, f1, f2, f3, f4, g1, g2, g3, g4, g5, g6, h1, h3, h4, h5, h6, h7, h8, h9, h10, j1, j3, j4, j5, j6, j7, j8, j9, j10, k1, k3, k4, k5, k6, k7, k8, k9, k10, i1, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, l1, l3, l4, l5, l6, l7, l8, m1, m3, m4, m5, m6, m7]
 
     for i in list:
         db.session.add(i)
