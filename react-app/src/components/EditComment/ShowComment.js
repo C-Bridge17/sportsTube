@@ -21,7 +21,7 @@ const ShowComment = ({ comment, sessionUser, isUser, video }) => {
           {showEdit && (
             <EditComment comment={comment} setShowEdit={setShowEdit} sessionUser={sessionUser} video={video} />
           )}
-          <div className='comment-content-area' hidden={showEdit}>{`${comment?.content}`}</div>
+          <div className='comment-content-area' hidden={!showEdit}>{`${comment?.content}`}</div>
           {isUser && comment?.user.id === sessionUser?.id && !showEdit && (
             <div onClick={() => editHandler(comment)} > <i className="fas fa-pen"></i></div>
           )}
