@@ -3,6 +3,7 @@ const POST_PLAYLIST = "playlists/ADD_PLAYLIST"
 const DEL_PLAYLIST = "playlists/DEL_PLAYLIST"
 const PUT_PLAYLIST = "playlists/PUT_PLAYLIST"
 const DEL_JOINS_PLAYLIST = "playlists/DEL_JOINS_PLAYLIST"
+const UPDATE_JOINS_PLAYLIST = "playlists/UPDATE_JOINS_PLAYLIST"
 
 
 const addPlaylist = list => ({
@@ -27,6 +28,11 @@ const deleteJoinsPlaylist = (list, playlistId) => ({
   list,
   playlistId
 })
+const updateJoinsPlaylist = (list) => ({
+  type: UPDATE_JOINS_PLAYLIST,
+  list
+
+})
 
 export const addVideo = (payload) => async dispatch => {
   const res = await fetch('/api/playlists/video', {
@@ -40,7 +46,7 @@ export const addVideo = (payload) => async dispatch => {
   })
   const list = await res.json()
   if (res.ok) {
-    dispatch(updatePlaylist(list))
+    dispatch(updateJoinsPlaylist(list))
   }
   return list
 }
@@ -151,6 +157,14 @@ const playlistReducer = (state = {}, action) => {
       const newState = { ...state };
       newState[action.playlistId].videos = newState[action.playlistId].videos.filter(el => el.video.id !== action.list);
       return {
+        ...newState
+      };
+    }
+    case UPDATE_JOINS_PLAYLIST: {
+      const newState = { ...state }
+      newState[action.list.video[0].playlistId].videos = [...action.list.video]
+      return {
+        ...state,
         ...newState
       };
     }

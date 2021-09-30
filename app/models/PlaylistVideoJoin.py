@@ -16,5 +16,6 @@ class PlaylistVideoJoin(db.Model):
         return {
             'id': self.id,
             'video': self.video.to_dict_ext(),
-            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S')
+            'createdAt': self.createdAt.strftime('%m/%d/%Y %H:%M:%S'),
+            'playlistId': self.playlistId
         }

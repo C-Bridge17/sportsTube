@@ -27,7 +27,7 @@ const AddToPlaylistModal = ({ video }) => {
         videoId: video.id,
         playlistId: playlist.id
       }
-      await dispatch(addVideo(payload))
+      await dispatch(addVideo(payload, playlists.id))
     }
     if (found.length) {
       await dispatch(delVideoFromPlaylist(found[0].id, found[0].video.id, playlist.id))
@@ -87,7 +87,7 @@ const AddToPlaylistModal = ({ video }) => {
                 name={`${playlist.title}`}
                 value={`${playlist.id}`}
                 checked={checker(playlist)}
-                onChange={(e) => setTimeout(handleChange(playlist, e), [350])}
+                onChange={(e) => handleChange(playlist, e)}
               ></input>
             </div>
           )}

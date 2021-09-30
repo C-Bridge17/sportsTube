@@ -59,8 +59,7 @@ def postVideoToPlaylist():
     )
     db.session.add(video)
     db.session.commit()
-    playlists = Playlist.query.all()
-    return {'playlists': [playlist.to_dict_ext() for playlist in playlists]}
+    return {'video': [video.to_dict()]}
 
 
 @playlists_routes.route('/video/<int:playlistJoinsId>', methods=['DELETE'])
