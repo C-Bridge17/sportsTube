@@ -12,11 +12,11 @@ faker = Faker()
 def seed_likes():
     for i in range(75):
         like = Like(userId=faker.random_int(min=1, max=71), videoId=faker.random_int(
-            min=1, max=150), createdAt=faker.date())
+            min=1, max=140), createdAt=faker.date())
         db.session.add(like)
     for i in range(75):
         like = Like(userId=faker.random_int(min=1, max=71), commentId=faker.random_int(
-            min=1, max=150), createdAt=faker.date())
+            min=1, max=140), createdAt=faker.date())
         db.session.add(like)
     db.session.commit()
 
