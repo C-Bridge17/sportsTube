@@ -11,13 +11,22 @@ function Profile() {
   const [user, setUser] = useState({});
   const { userId } = useParams();
   const sessionUser = useSelector(state => state.session.user);
-  const subbed = sessionUser.subbed.filter(subs => subs.id === +userId)
   const videos = useSelector(state => Object.values(state.Videos).filter(vid => vid.userId.id === user.id))
   const playlists = useSelector(state => Object.values(state.Playlists).filter(playlist => playlist.userId === +userId))
   const dispatch = useDispatch()
   const [isOwner, setIsOwner] = useState(false)
   const [isHome, setIsHome] = useState(true)
   const [isPlaylist, setIsPlaylist] = useState(false)
+
+  useEffect(() => {
+    if (videos.length === 0) {
+      handlePlaylistClick()
+    }
+    if (videos.length > 0) {
+      handleHomeClick()
+    }
+    return
+  }, [videos])
 
   useEffect(() => {
     (async () => {
@@ -79,9 +88,10 @@ function Profile() {
         {/* </div> */}
 
       </div>
-
       <ul className='profile-directions'>
-        <li onClick={handleHomeClick}>Home</li>
+        {videos.length > 0 && (
+          <li onClick={handleHomeClick}>Home</li>
+        )}
         <li onClick={handlePlaylistClick}>Playlists</li>
 
       </ul>
