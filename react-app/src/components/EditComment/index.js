@@ -10,11 +10,12 @@ const EditComment = ({ comment, sessionUser, video, setShowEdit }) => {
 
   const editSubmit = (e) => {
     e.preventDefault()
+
     let payload = {
       commentId: comment.id,
       userId: sessionUser.id,
       videoId: video.id,
-      content: editComment
+      content: editComment.trim()
     }
     dispatch(putComment(payload))
     setShowEdit(false)

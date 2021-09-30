@@ -9,6 +9,7 @@ import Home from './components/Home'
 import Profile from './components/Profile'
 import { authenticate } from './store/session';
 import Splash from './components/Splash/Splash';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
+
       <ProtectedRoute>
         <NavBar />
       </ProtectedRoute>
@@ -46,7 +48,6 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <Profile />
         </ProtectedRoute>
-
       </Switch>
     </BrowserRouter>
   );
