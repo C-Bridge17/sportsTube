@@ -34,7 +34,7 @@ const VideoModal = ({ video }) => {
 
     if (newComment.trim() === '') return
 
-    if (newComment.trim().length > 120) return alert('Comment is to long.')
+    if (newComment.trim().length > 120) return alert('Comment is too long. Max of 120 characters.')
 
     let payload = {
       userId: sessionUser.id,

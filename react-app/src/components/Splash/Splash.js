@@ -44,15 +44,15 @@ const Splash = () => {
           <h2>Welcome to SportsTube</h2>
           <h4>
             Click the Arrow above to take a quick tour of SportsTube.
-            Already been here Hit the <button type='button' onClick={() => setShowLogIn(false)}>Log In/Sign Up</button> button to get right into the App.
+            Already been here? Hit the <button type='button' onClick={() => setShowLogIn(false)}>Log In/Sign Up</button> button to get right into the App.
           </h4>
-          <div className='splash-img' style={{ backgroundImage: `url(${home})` }}></div>
+          <div><iframe width="660" height="415" src="https://www.youtube.com/embed/CEVdca9U9LM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         </div>
 
         <div hidden={!(currentShow === 2) || !(showLogIn === true)}>
           <div>
             <p>
-              This the the home page where you can view multiple videos from some of the best sports content creators out there.
+              This the home page where you can view multiple videos from some of the best sports content creators out there.
             </p>
           </div>
           <div>
@@ -63,7 +63,7 @@ const Splash = () => {
         <div hidden={!(currentShow === 3) || !(showLogIn === true)}>
           <div>
             <p>
-              This is a profile page you can navigate there through the search bar on the top of our screen or to your own profile by clicking your profile image.
+              This is a profile page - Find other users through the search bar on the top of screen or go to your own profile by clicking your profile image.
             </p>
           </div>
           <div>
@@ -85,12 +85,12 @@ const Splash = () => {
         <div hidden={!(currentShow === 5) || !(showLogIn === true)}>
           <div>
             <p>
-              This is the playlist pop up where add new playlists to store videos that you would like to watch later.</p>
+              This is the playlist pop up where you add new playlists to store videos that you would like to watch later.</p>
             <p>
-              If you already have an existing playlist you would like to add a video to just click the checkbox next to the playlists name and it will be waiting in your profile page for you.
+              If you already have an existing playlist you would like to add a video to, just click the checkbox next to the playlists name and it will be waiting in your profile page for you.
             </p>
             <p>
-              Now that you've seen what this site is about hit the <button type='button' onClick={() => setShowLogIn(false)}>Log In/Sign Up</button> and sign up or log in as the Demo User to check things out.
+              Now that you've seen what this site is about, hit the <button type='button' onClick={() => setShowLogIn(false)}>Log In/Sign Up</button> and sign up or log in as the Demo User to check things out.
             </p>
           </div>
           <div>
