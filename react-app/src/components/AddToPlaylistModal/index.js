@@ -67,6 +67,7 @@ const AddToPlaylistModal = ({ video }) => {
         <h4>New Playlist</h4>
         <form onSubmit={handleSubmit}>
           <input
+            className='check-box'
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
