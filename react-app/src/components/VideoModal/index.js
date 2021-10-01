@@ -11,7 +11,7 @@ import './videoModal.css'
 const VideoModal = ({ video }) => {
   const sessionUser = useSelector(state => state.session.user);
   const comments = useSelector(state => Object.values(state.Comments).filter(el => el.videoId === video.id).sort((a, b) => b.id - a.id))
-  const [showCommentForm, setShwoCommentForm] = useState(false)
+  const [showCommentForm, setShowCommentForm] = useState(false)
   const [newComment, setNewComment] = useState('')
   const [showPlaylistModal, setShowPlaylistModal] = useState(false)
   const dispatch = useDispatch()
@@ -69,7 +69,7 @@ const VideoModal = ({ video }) => {
           <i className="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='comments-vid-modal'>
-          <button hidden={showCommentForm} onClick={() => setShwoCommentForm(true)}>Leave a Comment</button>
+          <button hidden={showCommentForm} onClick={() => setShowCommentForm(true)}>Leave a Comment</button>
           {isUser && showCommentForm && (
             <div className='comment-form'>
               <form onSubmit={handleSubmit}>
