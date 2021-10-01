@@ -43,6 +43,7 @@ const NavBar = () => {
       return user.username.toLowerCase().startsWith(lowerSearch) && user.id !== id
     })
     if (search !== '') setFilteredSearch(filteredUsers)
+
     else setFilteredSearch([])
   }
 
@@ -51,6 +52,7 @@ const NavBar = () => {
     if (e.key === 'Enter') {
       if (filteredSearch.length !== 0) {
         history.push(`/users/${filteredSearch[0].id}`)
+        setShowSearch(false)
       }
     }
   }
@@ -100,7 +102,7 @@ const NavBar = () => {
         </NavLink>
         <input
           className='search-bar'
-          placeholder='Search'
+          placeholder='Search Users'
           value={search}
           onKeyDown={_handleKeyDown}
           onChange={handleSearchChange}
@@ -112,6 +114,9 @@ const NavBar = () => {
           )}
         </ul>)}
 
+        {!filteredSearch.length && showSearch && (<ul className='search-dropdown'>
+          <li>No Users {`${search}`} found</li>
+        </ul>)}
         <NavLink to='/' exact={true} activeClassName='active'>
           <i className="fas fa-home"></i>
         </NavLink>
