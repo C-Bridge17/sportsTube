@@ -115,7 +115,7 @@ const NavBar = () => {
         </ul>)}
 
         {!filteredSearch.length && showSearch && (<ul className='search-dropdown'>
-          <li>No Users {`${search}`} found</li>
+          <li>No Users named {`${search}`} found</li>
         </ul>)}
         <NavLink to='/' exact={true} activeClassName='active'>
           <i className="fas fa-home"></i>
