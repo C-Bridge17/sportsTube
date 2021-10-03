@@ -46,7 +46,7 @@ const Splash = () => {
             Click the Arrow above to take a quick tour of SportsTube.
             Already been here? Hit the <button type='button' onClick={() => setShowLogIn(false)}>Log In/Sign Up</button> button to get right into the App.
           </h4>
-          <div><iframe width="660" height="415" src="https://www.youtube.com/embed/CEVdca9U9LM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="660" height="415" src="https://www.youtube.com/embed/pZpSv9fy0QM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         </div>
 
         <div hidden={!(currentShow === 2) || !(showLogIn === true)}>
