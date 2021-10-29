@@ -112,3 +112,6 @@
 .search-bar {
   color: white;
 }
+.search-bar::placeholder {
+  color: white;
+}

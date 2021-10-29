@@ -33,9 +33,6 @@ const AddToPlaylistModal = ({ video }) => {
     return
   }
 
-  useEffect(() => {
-
-  }, [handleChange])
   const handleSubmit = async (e) => {
     e.preventDefault()
 
