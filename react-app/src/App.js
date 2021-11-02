@@ -28,7 +28,6 @@ function App() {
 
   return (
     <BrowserRouter>
-
       <ProtectedRoute>
         <NavBar />
       </ProtectedRoute>
