@@ -49,11 +49,6 @@ const VideoModal = ({ video }) => {
 
   }
 
-  // const handleLike = (e) => {
-  //   e.preventDefault()
-
-  // }
-
 
 
   return (
@@ -64,8 +59,6 @@ const VideoModal = ({ video }) => {
         <div className='video-modal-content'>
           <div className='video-modal-profile-img' style={{ backgroundImage: `url(${video?.userId.profileImgUrl})` }}></div>
           <div><NavLink to={`/users/${video.userId.id}`}>{`${video.userId.username}`}</NavLink></div>
-          {/* <button type='button' onClick={handleLike}><i className="fas fa-thumbs-up">
-            {`   ${video.likes.length}`}</i></button> */}
           <i className="fas fa-plus" onClick={() => setShowPlaylistModal(true)}></i>
         </div>
         <div className='comments-vid-modal'>

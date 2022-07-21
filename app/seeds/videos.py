@@ -3,14 +3,6 @@ from faker import Faker
 
 faker = Faker()
 
-
-# id = db.Column(db.Integer, primary_key=True)
-#     caption = db.Column(db.String)
-#     videoUrl = db.Column(db.String, nullable=False)
-#     userId = db.Column(db.Integer, db.ForeignKey("users.id"))
-#     createdAt = db.Column(db.DateTime)
-
-
 def seed_videos():
     v1 = Video(caption='Premier League Matchweek 5: N\'Golo Kante stars for Chelsea | The Breakdown | NBC Sports',
                videoUrl="https://www.youtube.com/embed/QfN4OpAE9OE", userId=2, createdAt=faker.date())
