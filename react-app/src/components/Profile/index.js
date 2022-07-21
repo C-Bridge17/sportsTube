@@ -67,21 +67,6 @@ function Profile() {
         <ul className='header-info'>
           <li className='header-username'>{`${user?.username}`}</li>
         </ul>
-        {/* {user?.subbed?.length === 0 && (
-            <li>No Subscribers</li>
-          )}
-          {user?.subbed?.length > 0 && (
-            <li>{`Subscribers: ${user?.subbed?.length}`}</li>
-          )}
-          <div className='sub-button'>
-          {subbed && (
-            <button>Subscribe</button>
-            )}
-            {!subbed && (
-              <button>unSubscribe</button>
-            )} */}
-        {/* </div> */}
-
       </div>
       <ul className='profile-directions'>
         {videos.length > 0 && (
